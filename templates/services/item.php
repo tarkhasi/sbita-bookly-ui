@@ -10,14 +10,22 @@
 if (!isset($item['title'])) return;
 
 $attachment_id = $item['attachment_id'];
+$url = apply_filters('sbu_service_url', null, $item, $attrs);
+$default_class =  sbita_get_option('bu_default_service_item_class');
 ?>
 
-<div class="<?php echo $attrs['item_class'] ?? 'sbu-service-item sbu-box-shadow sbu-rounded' ?>"
+<div class="<?php echo $attrs['item_class'] ?? $default_class ?>"
      title="<?php echo $item['title']; ?>"
 >
 
     <div class="sbu-service-item-image">
-        <?php require SBU_TMP_DIR . '/services/image.php'; ?>
+        <?php if ($url) { ?>
+            <a href="<?php echo $url ?>">
+                <?php require SBU_TMP_DIR . '/services/image.php'; ?>
+            </a>
+        <?php } else { ?>
+            <?php require SBU_TMP_DIR . '/services/image.php'; ?>
+        <?php } ?>
     </div>
 
     <div class="sbu-service-item-content">

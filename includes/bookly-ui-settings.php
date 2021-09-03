@@ -20,6 +20,53 @@ if (!class_exists('BooklyUiSettings')) {
 
         private static function add_settings()
         {
+            // Title
+            $whc_option = new SbitaCoreOptionModel(null);
+            $whc_option->setInputType('split');
+            $whc_option->setLabel(__('Services', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+
+            // Default Service Image
+            $whc_option = new SbitaCoreOptionModel('bu_default_service_image');
+            $whc_option->setDefaultValue(null);
+            $whc_option->setDescription(__('Default image url for service', 'sbita-bookly-ui'));
+            $whc_option->setInputType('text');
+            $whc_option->setLabel(__('Default Service Image', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+            // Item class
+            $whc_option = new SbitaCoreOptionModel('bu_default_service_item_class');
+            $whc_option->setDefaultValue('sbu-service-item sbu-box-shadow sbu-rounded');
+            $whc_option->setInputType('text');
+            $whc_option->setLabel(__('Service Item Class', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+            // Next button label
+            $whc_option = new SbitaCoreOptionModel('bu_service_next_button_title');
+            $whc_option->setDefaultValue('Next');
+            $whc_option->setInputType('text');
+            $whc_option->setLabel(__('Service Next Button Title', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+
+            // Line
+            $whc_option = new SbitaCoreOptionModel(null);
+            $whc_option->setInputHtml('<hr/>');
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+            // Title
+            $whc_option = new SbitaCoreOptionModel(null);
+            $whc_option->setInputType('split');
+            $whc_option->setLabel(__('Staff Members', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
             // Default Staff Image
             $whc_option = new SbitaCoreOptionModel('bu_default_staff_image');
             $whc_option->setDefaultValue(__('', 'sbita-bookly-ui'));
@@ -29,12 +76,32 @@ if (!class_exists('BooklyUiSettings')) {
             $whc_option->setGroup(self::$group_name);
             $whc_option->add();
 
-            // Default Service Image
-            $whc_option = new SbitaCoreOptionModel('bu_default_service_image');
-            $whc_option->setDefaultValue(__('', 'sbita-bookly-ui'));
-            $whc_option->setDescription(__('Default image url for service', 'sbita-bookly-ui'));
+            // Item class
+            $whc_option = new SbitaCoreOptionModel('bu_default_staff_item_class');
+            $whc_option->setDefaultValue('sbu-staff-item sbu-box-shadow sbu-rounded');
             $whc_option->setInputType('text');
-            $whc_option->setLabel(__('Default Service Image', 'sbita-bookly-ui'));
+            $whc_option->setLabel(__('Staff Item Class', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+            // Next button label
+            $whc_option = new SbitaCoreOptionModel('bu_staff_next_button_title');
+            $whc_option->setDefaultValue('Next');
+            $whc_option->setInputType('text');
+            $whc_option->setLabel(__('Staff Next Button Title', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+            // Line
+            $whc_option = new SbitaCoreOptionModel(null);
+            $whc_option->setInputHtml('<hr/>');
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
+
+            // Title
+            $whc_option = new SbitaCoreOptionModel(null);
+            $whc_option->setInputType('split');
+            $whc_option->setLabel(__('Pages', 'sbita-bookly-ui'));
             $whc_option->setGroup(self::$group_name);
             $whc_option->add();
 

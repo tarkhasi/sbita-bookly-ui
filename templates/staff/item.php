@@ -9,15 +9,21 @@
 if (!isset($item['id'])) return;
 
 $attachment_id = $item['attachment_id'];
-$url = apply_filters('sbu_staff_item_url', '#', $item, $attrs);
-
+$url = apply_filters('sbu_staff_item_url', null, $item, $attrs);
+$default_class =  sbita_get_option('bu_default_service_item_class');
 ?>
 
 <div title="<?php echo $item['full_name'] ?? ''; ?>"
-     class="<?php echo $attrs['item_class'] ?? 'sbu-staff-item sbu-box-shadow sbu-rounded' ?>">
+     class="<?php echo $attrs['item_class'] ?? $default_class ?>">
 
     <div class="sbu-staff-item-image">
-        <?php require SBU_TMP_DIR . '/staff/image.php'; ?>
+        <?php if ($url) { ?>
+            <a href="<?php echo $url ?>">
+                <?php require SBU_TMP_DIR . '/staff/image.php'; ?>
+            </a>
+        <?php } else { ?>
+            <?php require SBU_TMP_DIR . '/staff/image.php'; ?>
+        <?php } ?>
     </div>
 
     <div class="sbu-staff-item-content">

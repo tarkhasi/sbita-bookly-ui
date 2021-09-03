@@ -7,6 +7,7 @@ if (!class_exists('BooklyUiServices')) {
         public static function main()
         {
             add_action('sbu_service_button', array(__CLASS__, 'item_buttons'), 1, 2);
+            add_filter('sbu_service_url', array(__CLASS__, 'default_service_url'), 1, 3);
         }
 
         /**
@@ -51,11 +52,12 @@ if (!class_exists('BooklyUiServices')) {
          */
         public static function item_buttons($item, $attrs)
         {
-            $url = self::default_service_url(null, $item, $attrs);
+            $url = apply_filters('sbu_service_url', null, $item, $attrs);
             if (!$url) return;
+            $title = sbita_get_option('bu_service_next_button_title') ?? 'Next';
 
             echo '<a href="' . $url . '"  >
-                        <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __('Next', 'sbita-bookly-ui') . '</button>
+                        <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __($title, 'sbita-bookly-ui') . '</button>
                 </a>';
         }
 

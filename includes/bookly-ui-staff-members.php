@@ -7,6 +7,8 @@ if (!class_exists('BooklyUiStaffMembers')) {
         public static function main()
         {
             add_action('sbu_staff_button', array(__CLASS__, 'item_buttons'), 1, 2);
+            add_filter('sbu_staff_item_url', array(__CLASS__, 'default_item_link'), 1, 3);
+
         }
 
 
@@ -52,11 +54,12 @@ if (!class_exists('BooklyUiStaffMembers')) {
          */
         public static function item_buttons($item, $attrs)
         {
-            $url = self::default_item_link(null, $item, $attrs);
+            $url = apply_filters('sbu_staff_item_url', null, $item, $attrs);
             if (!$url) return;
+            $title = sbita_get_option('bu_staff_next_button_title') ?? 'Next';
 
             echo '<a href="' . $url . '"  >
-                        <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __('Next', 'sbita-bookly-ui') . '</button>
+                        <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __($title, 'sbita-bookly-ui') . '</button>
                 </a>';
         }
 
