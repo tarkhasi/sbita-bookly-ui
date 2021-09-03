@@ -12,6 +12,8 @@ if (!isset($data) || !$data) {
 }
 ?>
 
+<?php do_action('sbu_staff_members_list_before'); ?>
+
 <div class="sbu-staff-main">
     <?php
     foreach ($data as $item) {
@@ -19,3 +21,5 @@ if (!isset($data) || !$data) {
     } ?>
 
 </div>
+
+<?php do_action('sbu_staff_members_list_after'); ?>

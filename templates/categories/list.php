@@ -15,6 +15,8 @@ if (!isset($data) || !$data) {
 ?>
 
 
+<?php do_action('sbu_categories_list_before'); ?>
+
 <div class="sbu-categories-main">
     <?php
     foreach ($data as $item) {
@@ -22,3 +24,5 @@ if (!isset($data) || !$data) {
     } ?>
 
 </div>
+
+<?php do_action('sbu_categories_list_after'); ?>
