@@ -1,0 +1,123 @@
+
+[class*='sbu-'] {
+    text-decoration: none;
+}
+
+.sbu-rounded {
+    border-radius: 20px !important;
+}
+
+.sbu-box-shadow:hover {
+    box-shadow: 0 0 15px rgba(40, 40, 40, 0.16);
+}
+
+.sub-flex {
+    display: flex;
+}
+
+.sbu-p-t {
+    padding-top: 15px;
+}
+
+.sbu-grid-list, .sbu-categories-main, .sbu-services-main, .sbu-staff-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+/* Buttons */
+.sub-btn {
+    border-radius: 0;
+    color: #212121 !important;
+    background: white !important;
+    padding: 7px 20px;
+    font-size: 10pt;
+    border: 1px #212121 solid !important;
+    text-transform: uppercase;
+}
+
+.sub-btn-success {
+
+}
+
+.sub-btn-success:hover {
+    border: 1px #388E3C solid !important;
+    color: white !important;
+    background: #388E3C !important;
+}
+
+/* Categories */
+
+.sbu-category-item {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    background: white;
+}
+
+/* Services */
+.sbu-services-main {
+}
+
+.sbu-service-item {
+    width: 100%;
+    text-align: center;
+    background: white;
+    overflow: hidden;
+}
+
+.sbu-service-item-content, .sbu-staff-item-content {
+    padding: 15px;
+}
+
+.sbu-service-item-title, .sbu-staff-item-title, .sbu-service-item-category, .sbu-staff-item-email {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.sbu-service-item-title, .sbu-staff-item-title {
+
+    width: 100%;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.sbu-service-item-category, .sbu-staff-item-email {
+    width: 100%;
+    font-size: 10pt;
+}
+
+.sbu-service-item-price {
+    padding-top: 5px;
+    width: 50%;
+    font-size: 15pt;
+}
+
+.sbu-service-item-duration {
+    padding-top: 5px;
+    width: 50%;
+    font-size: 15pt;
+}
+
+.sbu-service-footer, .sbu-staff-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 15px 15px;
+    justify-content: space-between;
+}
+
+
+/* Staff */
+.sbu-staff-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sbu-staff-item {
+    width: 100%;
+    text-align: center;
+    background: white;
+    overflow: hidden;
+}
