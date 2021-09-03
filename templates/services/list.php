@@ -14,7 +14,7 @@ if (!isset($data) || !$data) {
 
 ?>
 
-<?php do_action('sbu_services_list_before'); ?>
+<?php do_action('sbu_services_list_before', $data, $attrs); ?>
 
 <div class="sbu-services-main">
     <?php
@@ -24,4 +24,4 @@ if (!isset($data) || !$data) {
 
 </div>
 
-<?php do_action('sbu_services_list_after'); ?>
+<?php do_action('sbu_services_list_after', $data, $attrs); ?>

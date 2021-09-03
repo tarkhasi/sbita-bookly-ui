@@ -15,7 +15,7 @@ if (!isset($data) || !$data) {
 ?>
 
 
-<?php do_action('sbu_categories_list_before'); ?>
+<?php do_action('sbu_categories_list_before', $data, $attrs); ?>
 
 <div class="sbu-categories-main">
     <?php
@@ -25,4 +25,4 @@ if (!isset($data) || !$data) {
 
 </div>
 
-<?php do_action('sbu_categories_list_after'); ?>
+<?php do_action('sbu_categories_list_after', $data, $attrs); ?>

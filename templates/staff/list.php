@@ -12,7 +12,7 @@ if (!isset($data) || !$data) {
 }
 ?>
 
-<?php do_action('sbu_staff_members_list_before'); ?>
+<?php do_action('sbu_staff_members_list_before', $data, $attrs); ?>
 
 <div class="sbu-staff-main">
     <?php
@@ -22,4 +22,4 @@ if (!isset($data) || !$data) {
 
 </div>
 
-<?php do_action('sbu_staff_members_list_after'); ?>
+<?php do_action('sbu_staff_members_list_after', $data, $attrs); ?>
