@@ -46,9 +46,7 @@ if (!class_exists('SbitaBooklyUi')) {
             BooklyUiAdmin::main();
             BooklyUiShortcodes::main();
             BooklyUiSettings::main();
-            BooklyUiServices::main();
             BooklyUiCategories::main();
-            BooklyUiStaffMembers::main();
             BooklyUiForm::main();
         }
 
@@ -57,6 +55,8 @@ if (!class_exists('SbitaBooklyUi')) {
          */
         public static function init()
         {
+            BooklyUiServices::init();
+            BooklyUiStaffMembers::init();
             BooklyUiShortcodes::init();
             BooklyUiForm::init();
         }

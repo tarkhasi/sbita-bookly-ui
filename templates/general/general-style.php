@@ -17,6 +17,10 @@ $color = get_option('bookly_app_color') ?? '#388E3C';
         background: <?php echo $color ?> !important;
     }
 
+    .sbu-color-white-hover:hover {
+        color:white !important;
+    }
+
     .sbu-bookly-color {
         color: <?php echo $color ?> !important;
     }

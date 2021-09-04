@@ -4,7 +4,7 @@
 if (!class_exists('BooklyUiServices')) {
     class BooklyUiServices
     {
-        public static function main()
+        public static function init()
         {
             add_action('sbu_service_button', array(__CLASS__, 'item_buttons'), 1, 2);
             add_action('sbu_services_list_before', array(__CLASS__, 'show_filters'), 1, 2);
@@ -55,13 +55,15 @@ if (!class_exists('BooklyUiServices')) {
          */
         public static function item_buttons($item, $attrs)
         {
-            $url = apply_filters('sbu_service_url', null, $item, $attrs);
+            $url = self::default_service_url(null, $item, $attrs);
             if (!$url) return;
             $title = sbita_get_option('bu_service_next_button_title') ?? 'Next';
+            if (isset($attrs['button_label'])) $title = $attrs['button_label'];
+            $button_class = 'sbu-bookly-color sbu-color-white-hover sbu-bookly-bg-hover';
+            if (isset($attrs['button_label'])) $title = $attrs['button_label'];
+            if (isset($attrs['button_class'])) $button_class = $attrs['button_class'];
 
-            echo '<a href="' . $url . '"  >
-                        <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __($title, 'sbita-bookly-ui') . '</button>
-                </a>';
+            echo '<a href="' . $url . '" class="'.$button_class.'"  > ' . __($title, 'sbita-bookly-ui') . ' </a>';
         }
 
         /**
