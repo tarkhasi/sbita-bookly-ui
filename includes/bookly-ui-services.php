@@ -7,7 +7,10 @@ if (!class_exists('BooklyUiServices')) {
         public static function main()
         {
             add_action('sbu_service_button', array(__CLASS__, 'item_buttons'), 1, 2);
+            add_action('sbu_services_list_before', array(__CLASS__, 'show_filters'), 1, 2);
+
             add_filter('sbu_service_url', array(__CLASS__, 'default_service_url'), 1, 3);
+
         }
 
         /**
@@ -59,6 +62,17 @@ if (!class_exists('BooklyUiServices')) {
             echo '<a href="' . $url . '"  >
                         <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __($title, 'sbita-bookly-ui') . '</button>
                 </a>';
+        }
+
+        /**
+         * Show services list filters
+         *
+         * @param $data
+         * @param $attrs
+         */
+        public static function show_filters($data, $attrs)
+        {
+            require SBU_TMP_DIR . '/services/filters.php';
         }
 
     }

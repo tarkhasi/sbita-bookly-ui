@@ -7,6 +7,8 @@ if (!class_exists('BooklyUiStaffMembers')) {
         public static function main()
         {
             add_action('sbu_staff_button', array(__CLASS__, 'item_buttons'), 1, 2);
+            add_action('sbu_staff_members_list_before', array(__CLASS__, 'show_filters'), 1, 2);
+
             add_filter('sbu_staff_item_url', array(__CLASS__, 'default_item_link'), 1, 3);
 
         }
@@ -61,6 +63,18 @@ if (!class_exists('BooklyUiStaffMembers')) {
             echo '<a href="' . $url . '"  >
                         <button class="sub-btn sub-btn-success sbu-rounded sbu-bookly-bg-hover">' . __($title, 'sbita-bookly-ui') . '</button>
                 </a>';
+        }
+
+        /**
+         * Show services list filters
+         *
+         * @param $data
+         * @param $attrs
+         * @return null
+         */
+        public static function show_filters($data, $attrs)
+        {
+            require SBU_TMP_DIR . '/staff/filters.php';
         }
 
     }

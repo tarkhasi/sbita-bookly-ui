@@ -15,8 +15,7 @@ if (!class_exists('BooklyUiShortcodes')) {
                 add_shortcode(self::$services_shortcode, array(__CLASS__, 'services'));
                 add_shortcode(self::$staff_members_shortcode, array(__CLASS__, 'staff_members'));
                 add_shortcode(self::$categories_shortcode, array(__CLASS__, 'categories'));
-                // todo for next version
-//                add_shortcode(self::$form_shortcode, array(__CLASS__, 'form'));
+
             } catch (Exception $e) {
                 sbita_show_admin_message($e->getMessage());
             }
@@ -50,13 +49,6 @@ if (!class_exists('BooklyUiShortcodes')) {
         {
             ob_start();
             include sbita_plugin_template(__FILE__, 'shortcodes/categories.php');
-            return ob_get_clean();
-        }
-
-        public static function form($attrs)
-        {
-            ob_start();
-            include sbita_plugin_template(__FILE__, 'shortcodes/form.php');
             return ob_get_clean();
         }
     }

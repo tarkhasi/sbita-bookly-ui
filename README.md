@@ -7,3 +7,4 @@ SbiTa Bookly Ui add-on x allows you to have a better ui of services, staffs and 
 [sbita-bookly-ui-services link_attrs='target="_blank"']
 [sbita-bookly-ui-staff-members link_attrs='target="_blank"']
 ``` 
+

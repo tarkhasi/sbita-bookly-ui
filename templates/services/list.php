@@ -6,6 +6,7 @@
  * @var array $data
  */
 
+do_action('sbu_services_list_before', $data, $attrs);
 
 if (!isset($data) || !$data) {
     echo '<div class="sbu-not-found">'.__('Not found any service!', 'sbita-bookly-ui').'</div>';
@@ -14,7 +15,6 @@ if (!isset($data) || !$data) {
 
 ?>
 
-<?php do_action('sbu_services_list_before', $data, $attrs); ?>
 
 <div class="sbu-services-main">
     <?php
