@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ABSPATH')) exit; // Exit if accessed directly
 /**
  * Staff Members Image
  *
@@ -16,5 +16,5 @@ $image = wp_get_attachment_image_src($attachment_id, 'thumbnail')
 ?>
 
 <!--<img src="--><?php //echo $image ? $image[0] : '' ?><!--" alt="">-->
-<div <?php echo $image ? 'style="width: 100%;max-width:300px;height: 300px;background-image: url(' . $image[0] . '); background-size: cover;"' : '' ?>>
+<div <?php echo $image ? 'style="background-image: url(' . $image[0] . ');"' : '' ?>>
 </div>

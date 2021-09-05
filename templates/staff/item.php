@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ABSPATH')) exit; // Exit if accessed directly
 /**
  * Staff Members Item
  *
@@ -8,9 +8,16 @@
 
 if (!isset($item['id'])) return;
 
-$attachment_id = $item['attachment_id'];
+
 $url = apply_filters('sbu_staff_item_url', null, $item, $attrs);
-$default_class =  sbita_get_option('bu_default_staff_item_class');
+$custom_html = apply_filters('sbu_staff_item_html', null, $item, $attrs, $url);
+if ($custom_html) {
+    echo $custom_html;
+    return;
+}
+
+$attachment_id = $item['attachment_id'];
+$default_class = sbita_get_option('bu_default_staff_item_class');
 ?>
 
 <div title="<?php echo $item['full_name'] ?? ''; ?>"

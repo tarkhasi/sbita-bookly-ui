@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ABSPATH')) exit; // Exit if accessed directly
 /**
  * Staff Members Shortcode
  *
@@ -36,7 +36,7 @@ $data = $query->fetchArray();
 
 do_action('sbu_shortcode_staff_before');
 
-require SBU_TMP_DIR . '/general/general-style.php';
+require_once SBU_TMP_DIR . '/general/general-style.php';
 require SBU_TMP_DIR . '/staff/list.php';
 
 do_action('sbu_shortcode_staff_after');

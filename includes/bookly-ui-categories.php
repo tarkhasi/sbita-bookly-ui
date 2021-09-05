@@ -19,22 +19,19 @@ if (!class_exists('BooklyUiCategories')) {
          */
         public static function default_item_link($url, $item, $attrs)
         {
-            // form url
-
-
             // create item url by services page
             $page_id = sbita_get_option('bu_services_page');
-            if ($page_id) {
-                $url = get_permalink($page_id);
-                $url = $url . '?cat_id=' . $item['id'];
+            if (!$page_id) return $url;
 
-                // staff id
-                $staff_id = $_GET['staff_id'] ?? null;
-                $staff_id = $attrs['staff_id'] ?? $staff_id;
-                $staff_id = apply_filters('sbu_shortcode_categories_staff_id', $staff_id, $attrs);
+            $url = get_permalink($page_id);
+            $url = $url . '?cat_id=' . $item['id'];
 
-                $url .= '&'.$staff_id;
-            }
+            // staff id
+            $staff_id = $_GET['staff_id'] ?? null;
+            $staff_id = $attrs['staff_id'] ?? $staff_id;
+            $staff_id = apply_filters('sbu_shortcode_categories_staff_id', $staff_id, $attrs);
+
+            $url .= '&' . $staff_id;
             return $url;
         }
 

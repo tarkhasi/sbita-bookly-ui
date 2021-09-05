@@ -11,21 +11,23 @@ Text Domain: sbita-bookly-ui
 
 if (!class_exists('SbitaBooklyUi')) {
 
+    define('SBU_INC_DIR', path_join(plugin_dir_path(__FILE__), 'includes'));
     define('SBU_TMP_DIR', path_join(plugin_dir_path(__FILE__), 'templates'));
+
 
     require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-    include plugin_dir_path(__FILE__) . '/includes/functions.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-shortcodes.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-settings.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-pages.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-services.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-categories.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-staff-members.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-admin.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-form.php';
-    include plugin_dir_path(__FILE__) . '/includes/bookly-ui-api.php';
-
+    include SBU_INC_DIR . '/functions.php';
+    include SBU_INC_DIR . '/bookly-ui-shortcodes.php';
+    include SBU_INC_DIR . '/bookly-ui-settings.php';
+    include SBU_INC_DIR . '/bookly-ui-pages.php';
+    include SBU_INC_DIR . '/bookly-ui-services.php';
+    include SBU_INC_DIR . '/bookly-ui-categories.php';
+    include SBU_INC_DIR . '/bookly-ui-staff-members.php';
+    include SBU_INC_DIR . '/bookly-ui-admin.php';
+    include SBU_INC_DIR . '/bookly-ui-form.php';
+    include SBU_INC_DIR . '/bookly-ui-api.php';
+    include SBU_INC_DIR . '/bookly-ui-relations.php';
 
     class SbitaBooklyUi
     {
@@ -48,6 +50,7 @@ if (!class_exists('SbitaBooklyUi')) {
             BooklyUiSettings::main();
             BooklyUiCategories::main();
             BooklyUiForm::main();
+            BooklyUiRelations::main();
         }
 
         /**

@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ABSPATH')) exit; // Exit if accessed directly
 /**
  * Services Shortcode
  *
@@ -48,7 +48,7 @@ $data = $query->fetchArray();
 
 do_action('sbu_shortcode_services_before');
 
-require SBU_TMP_DIR . '/general/general-style.php';
+require_once SBU_TMP_DIR . '/general/general-style.php';
 require SBU_TMP_DIR . '/services/list.php';
 
 do_action('sbu_shortcode_services_after');

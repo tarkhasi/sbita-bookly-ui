@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ABSPATH')) exit; // Exit if accessed directly
 /**
  * Categories List
  *
@@ -8,21 +8,23 @@
 
 
 if (!isset($data) || !$data) {
-    echo '<div class="sbu-not-found">'.__('Not found any category!', 'sbita-bookly-ui').'</div>';
+    echo '<div class="sbu-not-found">' . __('Not found any category!', 'sbita-bookly-ui') . '</div>';
     return;
 }
 
+$class = $attrs['list_class'] ?? 'sbu-categories-main ';
+$size = $attrs['size'] ?? 'medium';
+$class .= " sbu-$size "
 ?>
 
 
 <?php do_action('sbu_categories_list_before', $data, $attrs); ?>
 
-<div class="sbu-categories-main">
+<div class="<?php echo $class ?>">
     <?php
     foreach ($data as $item) {
         require SBU_TMP_DIR . '/categories/item.php';
     } ?>
-
 </div>
 
 <?php do_action('sbu_categories_list_after', $data, $attrs); ?>

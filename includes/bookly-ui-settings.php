@@ -30,7 +30,7 @@ if (!class_exists('BooklyUiSettings')) {
             // Categories Page
             $whc_option = new SbitaCoreOptionModel('bu_categories_page');
             $whc_option->setDefaultValue(null);
-            $whc_option->setDescription(__('This page must contain of `[sbita-bookly-ui-categories]` shortcode','sbita-bookly-ui'));
+            $whc_option->setDescription(__('This page must contain of `[sbita-bookly-ui-categories]` shortcode', 'sbita-bookly-ui'));
             $whc_option->setInputType('wp_dropdown_pages');
             $whc_option->setLabel(__('Categories Page', 'sbita-bookly-ui'));
             $whc_option->setGroup(self::$group_name);
@@ -39,7 +39,7 @@ if (!class_exists('BooklyUiSettings')) {
             // Services Page
             $whc_option = new SbitaCoreOptionModel('bu_services_page');
             $whc_option->setDefaultValue(null);
-            $whc_option->setDescription(__('This page must contain of `[sbita-bookly-ui-services]` shortcode','sbita-bookly-ui'));
+            $whc_option->setDescription(__('This page must contain of `[sbita-bookly-ui-services]` shortcode', 'sbita-bookly-ui'));
             $whc_option->setInputType('wp_dropdown_pages');
             $whc_option->setLabel(__('Services Page', 'sbita-bookly-ui'));
             $whc_option->setGroup(self::$group_name);
@@ -48,7 +48,7 @@ if (!class_exists('BooklyUiSettings')) {
             // Staff members
             $whc_option = new SbitaCoreOptionModel('bu_staff_members_page');
             $whc_option->setDefaultValue(null);
-            $whc_option->setDescription(__('This page must contain of `[sbita-bookly-ui-staff-members]` shortcode','sbita-bookly-ui'));
+            $whc_option->setDescription(__('This page must contain of `[sbita-bookly-ui-staff-members]` shortcode', 'sbita-bookly-ui'));
             $whc_option->setInputType('wp_dropdown_pages');
             $whc_option->setLabel(__('Staff Members Page', 'sbita-bookly-ui'));
             $whc_option->setGroup(self::$group_name);
@@ -57,7 +57,7 @@ if (!class_exists('BooklyUiSettings')) {
             // Bookly page
             $whc_option = new SbitaCoreOptionModel('bu_bookly_page');
             $whc_option->setDefaultValue(null);
-            $whc_option->setDescription(__('This page must contain of `[bookly-form]` shortcode','sbita-bookly-ui'));
+            $whc_option->setDescription(__('This page must contain of `[bookly-form]` shortcode', 'sbita-bookly-ui'));
             $whc_option->setInputType('wp_dropdown_pages');
             $whc_option->setLabel(__('Bookly Page', 'sbita-bookly-ui'));
             $whc_option->setGroup(self::$group_name);
@@ -163,8 +163,18 @@ if (!class_exists('BooklyUiSettings')) {
             $whc_option->add();
 
 
-        }
+            // Categories images
+            $whc_option = new SbitaCoreOptionModel('bu_categories_images');
+            $whc_option->setDefaultValue(null);
+            $whc_option->setInputType('textarea');
+            $whc_option->setLabel(__('Categories Images', 'sbita-bookly-ui'));
+            $whc_option->setPlaceholder(__('EXAMPLE : {"1":"domain.com/image.png", "25": "214"}', 'sbita-bookly-ui'));
+            $whc_option->setDescription(__('By this options you can set image for your services categories. Template: <code>{"CAT_ID" : "YOUR_IMAGE_URL or ATTACHMENT_ID"}</code>. CAT_ID is your category ID, You can find <code>cat_id</code> from the url after clink on the category. <br/>YOUR_IMAGE_URL can be the address of an image. ATTACHMENT_ID is your uploaded file id in <a href="/wp-admin/upload.php" target="_blank">media library</a>, form url after click your file is <code>...?item=ATTACHMENT_ID</code>.<br/><b>NOTE</b> : The json structure of this setting must be maintained. you can check your json structure by <a href="https://jsonlint.com/" target="_blank">jsonlint.com</a>.', 'sbita-bookly-ui'));
+            $whc_option->setGroup(self::$group_name);
+            $whc_option->add();
 
+
+        }
 
     }
 }

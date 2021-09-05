@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ABSPATH')) exit; // Exit if accessed directly
 /**
  * Service Item
  *
@@ -9,8 +9,16 @@
 
 if (!isset($item['title'])) return;
 
-$attachment_id = $item['attachment_id'];
+
 $url = apply_filters('sbu_service_url', null, $item, $attrs);
+$custom_html = apply_filters('sbu_service_item_html', null, $item, $attrs, $url);
+if ($custom_html) {
+
+    echo $custom_html;
+    return;
+}
+
+$attachment_id = $item['attachment_id'];
 $default_class =  sbita_get_option('bu_default_service_item_class');
 ?>
 

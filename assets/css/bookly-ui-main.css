@@ -1,4 +1,6 @@
+/* TOdo minify this file */
 
+/* General */
 [class*='sbu-'] {
     text-decoration: none;
     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
@@ -7,11 +9,13 @@
 .sbu-rounded {
     border-radius: 20px !important;
 }
+
 .sbu-nowrap {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
+
 .sbu-not-found {
     text-align: center;
     width: 100%;
@@ -44,16 +48,61 @@
     justify-items: center;
 }
 
-/* Categories */
-
-.sbu-category-item {
+/* ***** Categories ******* */
+.sbu-categories-main .sbu-category-item {
     width: 100%;
+    background-size: cover !important;
+    background-position: center !important;
     text-align: center;
-    padding: 50px 0;
     background: white;
+    overflow: hidden;
 }
 
-/* Services */
+.sbu-categories-main .sbu-category-item .sbu-overly {
+    padding: 150px 5px;
+}
+
+.sbu-categories-main .sbu-category-item.sbu-by-image {
+    border: none !important;
+}
+
+.sbu-categories-main .sbu-category-item.sbu-by-image .sbu-overly {
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    color: white !important;
+
+}
+
+.sbu-categories-main .sbu-category-item.sbu-by-image .sbu-overly {
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    color: white !important;
+    transition: 0.3s;
+}
+
+.sbu-categories-main .sbu-category-item.sbu-by-image .sbu-overly:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* category small */
+.sbu-categories-main.sbu-small .sbu-category-item .sbu-overly {
+    padding: 25px 5px;
+}
+
+.sbu-categories-main.sbu-small {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+
+/* category medium */
+.sbu-categories-main.sbu-medium .sbu-category-item .sbu-overly {
+    padding: 75px 5px;
+}
+
+.sbu-categories-main.sbu-medium {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+}
+
+/* ***** Services ******* */
 .sbu-services-main {
 }
 
@@ -62,6 +111,14 @@
     text-align: center;
     background: white;
     overflow: hidden;
+}
+
+.sbu-service-item-image div, .sbu-staff-item-image div {
+    background-size: cover;
+    background-position: center !important;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
 }
 
 .sbu-service-item-content, .sbu-staff-item-content {
@@ -73,6 +130,7 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
 .sbu-service-item-title, .sbu-staff-item-title {
 
     width: 100%;
@@ -102,6 +160,7 @@
     display: flex;
     flex-direction: row-reverse;
 }
+
 .sbu-service-footer a, .sbu-staff-footer a {
     width: 100%;
     padding: 15px 0;
@@ -109,12 +168,13 @@
     background: rgba(35, 35, 35, 0.03);
     border-top: solid 1px rgba(9, 9, 9, 0.05);
 }
+
 .sbu-service-footer a:hover, .sbu-staff-footer a:hover {
-    color:white !important;
+    color: white !important;
 }
 
 
-/* Staff */
+/* ***** Staff ******* */
 .sbu-staff-item {
     display: flex;
     flex-direction: column;
@@ -129,16 +189,17 @@
 }
 
 
-/* Filters */
-.sbu-services-filters{
+/* ***** Filters ******* */
+.sbu-services-filters {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: .5rem;
 }
+
 .sbu-services-filters-item {
     text-align: center;
     padding: 25px 35px;
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
     font-weight: bold;
 }

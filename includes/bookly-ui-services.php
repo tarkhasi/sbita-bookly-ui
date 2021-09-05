@@ -74,6 +74,7 @@ if (!class_exists('BooklyUiServices')) {
          */
         public static function show_filters($data, $attrs)
         {
+            if (isset($attrs['hide_filters']) && $attrs['hide_filters']) return;
             require SBU_TMP_DIR . '/services/filters.php';
         }
 
