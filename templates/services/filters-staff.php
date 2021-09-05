@@ -11,8 +11,11 @@
 
 if (!$staff_id) return;
 
-$item = Bookly\Lib\Entities\Staff::query('s')->where('id', $category_id)->fetchRow();
+$item = Bookly\Lib\Entities\Staff::query('s')->where('s.visibility', 'public')->where('id', $staff_id)->fetchRow();
+
 if (!$item || !isset($item['full_name'])) return;
+
+
 ?>
 
 <div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo $item['full_name'] ?>">

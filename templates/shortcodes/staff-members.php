@@ -13,23 +13,9 @@ $service_id = $attrs['service_id'] ?? $service_id;
 
 $service_id = apply_filters('sbu_shortcode_staff_service_id', $service_id, $attrs);
 
+$data = sbu_get_staff_members($service_id);
 
-use Bookly\Lib;
-
-
-$query = Lib\Entities\Staff::query('staff')
-    ->where('staff.visibility', 'public');
-
-// staff id
-if ($service_id) {
-    $query->innerJoin('StaffService', 'ss', 'ss.staff_id = staff.id')
-    ->where('ss.service_id', $service_id);
-}
-
-$query = apply_filters('sbu_shortcode_staff_members_query', $query, $attrs);
-
-$data = $query->fetchArray();
-
+$data = apply_filters('sbu_shortcode_staff_members', $data, $attrs);
 
 
 // show list

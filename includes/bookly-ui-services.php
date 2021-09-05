@@ -58,10 +58,10 @@ if (!class_exists('BooklyUiServices')) {
             $url = self::default_service_url(null, $item, $attrs);
             if (!$url) return;
             $title = sbita_get_option('bu_service_next_button_title') ?? 'Next';
-            if (isset($attrs['button_label'])) $title = $attrs['button_label'];
             $button_class = 'sbu-bookly-color sbu-color-white-hover sbu-bookly-bg-hover';
-            if (isset($attrs['button_label'])) $title = $attrs['button_label'];
-            if (isset($attrs['button_class'])) $button_class = $attrs['button_class'];
+
+            if (!empty($attrs['button_label'])) $title = $attrs['button_label'];
+            if (!empty($attrs['button_class'])) $button_class = $attrs['button_class'];
 
             echo '<a href="' . $url . '" class="'.$button_class.'"  > ' . __($title, 'sbita-bookly-ui') . ' </a>';
         }

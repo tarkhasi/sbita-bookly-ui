@@ -18,21 +18,31 @@ if ($custom_html) {
     return;
 }
 
+$style = !empty($attrs['style']) ? $attrs['style'] : '';
+$hide_image = !empty($attrs['hide_image']) ? $attrs['hide_image'] : false;
+$hide_buttons = !empty($attrs['hide_buttons']) ? $attrs['hide_buttons'] : false;
+$hide_duration = !empty($attrs['hide_duration']) ? $attrs['hide_duration'] : false;
+$hide_price = !empty($attrs['hide_price']) ? $attrs['hide_price'] : false;
+$link_attrs = !empty($attrs['link_attrs']) ? $attrs['link_attrs'] : '';
+$default_class = sbita_get_option('bu_default_service_item_class');
+$class = !empty($attrs['item_class']) ? $attrs['item_class'] : $default_class;
 $attachment_id = $item['attachment_id'];
-$default_class =  sbita_get_option('bu_default_service_item_class');
 ?>
 
-<div class="<?php echo $attrs['item_class'] ?? $default_class ?>"
+<div class="<?php echo $class ?>"
      title="<?php echo $item['title']; ?>"
+     style="<?php echo $style; ?>"
 >
 
     <div class="sbu-service-item-image">
-        <?php if ($url) { ?>
-            <a href="<?php echo $url ?>">
+        <?php if (!$hide_image) { ?>
+            <?php if ($url) { ?>
+                <a href="<?php echo $url ?>" <?php echo $link_attrs ?>>
+                    <?php require SBU_TMP_DIR . '/services/image.php'; ?>
+                </a>
+            <?php } else { ?>
                 <?php require SBU_TMP_DIR . '/services/image.php'; ?>
-            </a>
-        <?php } else { ?>
-            <?php require SBU_TMP_DIR . '/services/image.php'; ?>
+            <?php } ?>
         <?php } ?>
     </div>
 
@@ -44,16 +54,23 @@ $default_class =  sbita_get_option('bu_default_service_item_class');
             <?php echo $item['category_name']; ?>
         </div>
         <div class="sub-flex">
-            <div class="sbu-service-item-duration" title="<?php _e('Duration', 'sbita-bookly-ui'); ?>">
-                <?php echo sbu_duration($item['duration']); ?>
-            </div>
-            <div class="sbu-service-item-price" title="<?php _e('Price', 'sbita-bookly-ui'); ?>">
-                <?php echo apply_filters('sbu_service_price', sbu_price($item['price']), $item); ?>
-            </div>
+            <?php if (!$hide_duration) { ?>
+                <div class="sbu-service-item-duration sbu-nowrap" title="<?php _e('Duration', 'sbita-bookly-ui'); ?>">
+                    <?php echo sbu_duration($item['duration']); ?>
+                </div>
+            <?php } ?>
+            <?php if (!$hide_price) { ?>
+                <div class="sbu-service-item-price sbu-nowrap" title="<?php _e('Price', 'sbita-bookly-ui'); ?>">
+                    <?php echo apply_filters('sbu_service_price', sbu_price($item['price']), $item); ?>
+                </div>
+            <?php } ?>
+
         </div>
     </div>
 
-    <div class="sbu-service-footer">
-        <?php do_action('sbu_service_button', $item, $attrs); ?>
-    </div>
+    <?php if (!$hide_buttons) { ?>
+        <div class="sbu-service-footer">
+            <?php do_action('sbu_service_button', $item, $attrs); ?>
+        </div>
+    <?php } ?>
 </div>

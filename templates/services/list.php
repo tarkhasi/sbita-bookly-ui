@@ -13,10 +13,13 @@ if (!isset($data) || !$data) {
     return;
 }
 
+$style = !empty($attrs['list_style']) ? $attrs['list_style'] : '';
+$class = !empty($attrs['list_class']) ? $attrs['list_class'] : 'sbu-services-main';
+
 ?>
 
 
-<div class="sbu-services-main">
+<div class="<?php echo $class ?>" style="<?php echo $style ?>">
     <?php
     foreach ($data as $item) {
         require SBU_TMP_DIR . '/services/item.php';

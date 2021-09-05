@@ -16,7 +16,7 @@ $service_id = apply_filters('sbu_shortcode_staff_service_id', $service_id, $attr
 
 
 ?>
-<div class="sbu-services-filters">
+<div class="sbu-services-filters" style=" margin-bottom: 10px;">
 
     <?php
 

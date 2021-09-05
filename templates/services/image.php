@@ -12,9 +12,12 @@ if (!isset($attachment_id) || !$attachment_id) {
     echo "<img src='$default_image' alt=''/>";
     return;
 }
+
+$image_style = !empty($attrs['image_style']) ? $attrs['image_style'] : false;
+
 $image = wp_get_attachment_image_src($attachment_id, 'thumbnail');
 ?>
 
 <!--<img src="--><?php //echo $image ? $image[0] : '' ?><!--" alt="">-->
-<div <?php echo $image ? 'style="background-image: url(' . $image[0] . ');"' : '' ?>>
+<div style=" <?php echo $image ? 'background-image: url(' . $image[0] . ');' : '' ?> <?php echo $image_style ?>">
 </div>

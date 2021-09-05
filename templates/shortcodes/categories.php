@@ -17,9 +17,8 @@ $order = $attrs['order'] ?? $order;
 $limit = $attrs['limit'] ?? null;
 
 // query
-$query = Lib\Entities\Category::query('c')->sortBy($sort_by)->order($order)->limit($limit);
-$query = apply_filters('sbu_shortcode_categories_query', $query, $attrs);
-$data = $query->fetchArray();
+$data = sbu_get_categories_query()->sortBy($sort_by)->order($order)->limit($limit)->fetchArray();
+$query = apply_filters('sbu_shortcode_categories', $data, $attrs);
 
 
 // show list

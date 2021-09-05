@@ -105,6 +105,73 @@ class BooklyUiElementorCategories extends Widget_Base
      */
     protected function _register_controls()
     {
+
+
+        $this->start_controls_section(
+            'item',
+            [
+                'label' => __('Items', 'sbita-bookly-ui'),
+            ]
+        );
+
+        $this->add_control(
+            'hide_title',
+            [
+                'label' => __('Hide title', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'return_value' => 'true',
+                'default' => false,
+            ]
+        );
+
+        $this->add_control(
+            'hide_image',
+            [
+                'label' => __('Hide image', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'return_value' => 'true',
+                'default' => false,
+            ]
+        );
+
+        $this->add_control(
+            'size',
+            [
+                'label' => __('Card Size', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'small' => __('Small', 'sbita-bookly-ui'),
+                    'medium' => __('Medium', 'sbita-bookly-ui'),
+                    'big' => __('Big', 'sbita-bookly-ui'),
+
+                ],
+                'default' => 'medium',
+            ]
+        );
+
+        $this->add_control(
+            'open_new_tab',
+            [
+                'label' => __('Open in new tab', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'return_value' => '_blank',
+                'default' => false,
+            ]
+        );
+
+        $this->add_control(
+            'item_class',
+            [
+                'label' => __('Custom class', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '',
+            ]
+        );
+
+        $this->end_controls_section();
+
+
+
         $this->start_controls_section(
             'query',
             [
@@ -153,69 +220,6 @@ class BooklyUiElementorCategories extends Widget_Base
         $this->end_controls_section();
 
 
-
-        $this->start_controls_section(
-            'item',
-            [
-                'label' => __('Items', 'sbita-bookly-ui'),
-            ]
-        );
-
-        $this->add_control(
-            'hide_title',
-            [
-                'label' => __('Hide title', 'sbita-bookly-ui'),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'return_value' => 'true',
-                'default' => false,
-            ]
-        );
-
-        $this->add_control(
-            'hide_image',
-            [
-                'label' => __('Hide image', 'sbita-bookly-ui'),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'return_value' => 'true',
-                'default' => false,
-            ]
-        );
-
-        $this->add_control(
-            'size',
-            [
-                'label' => __('Card Size', 'sbita-bookly-ui'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'options' => [
-                    'small' => __('Small', 'plugin-name'),
-                    'medium' => __('Medium', 'plugin-name'),
-                    'big' => __('Big', 'plugin-name'),
-
-                ],
-                'default' => 'medium',
-            ]
-        );
-
-        $this->add_control(
-            'open_new_tab',
-            [
-                'label' => __('Open in new tab', 'sbita-bookly-ui'),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'return_value' => '_blank',
-                'default' => false,
-            ]
-        );
-        $this->add_control(
-            'item_class',
-            [
-                'label' => __('Custom class', 'sbita-bookly-ui'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => '',
-            ]
-        );
-
-
-        $this->end_controls_section();
 
 
     }
