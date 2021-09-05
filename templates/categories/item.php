@@ -16,15 +16,15 @@ if ($custom_html) {
     return;
 }
 
-$style = $attrs['style'] ?? '';
-$hide_image = $attrs['hide_image'] ?? false;
-$hide_title = $attrs['hide_title'] ?? false;
-$link_attrs = $attrs['link_attrs'] ?? '';
+$style = !empty($attrs['style']) ? $attrs['style'] : '';
+$hide_image = !empty($attrs['hide_image']) ? $attrs['hide_image'] : false;
+$hide_title = !empty($attrs['hide_title']) ? $attrs['hide_title'] : false;
+$link_attrs = !empty($attrs['link_attrs']) ? $attrs['link_attrs'] : '';
 $default_class = sbita_get_option('bu_default_category_item_class');
-$class = $attrs['item_class'] ?? $default_class;
+$class = !empty($attrs['item_class']) ? $attrs['item_class'] : $default_class;
 
 $image_url = sbu_service_category_image_url($item['id']);
-if ($image_url && $hide_image == false) {
+if ($image_url && !$hide_image) {
     if (!$hide_title) $class .= ' sbu-by-image';
     $style = 'background-image: url(' . $image_url . ');';
 }
@@ -35,7 +35,7 @@ if ($image_url && $hide_image == false) {
    class="<?php echo $class ?>"
    style="<?php echo $style ?>"
    title="<?php echo $item['name'] ?>"
-   <?php echo $link_attrs  ?>
+    <?php echo $link_attrs ?>
 >
     <div class="sbu-overly sbu-nowrap">
         <?php echo !$hide_title ? $item['name'] : ''; ?>

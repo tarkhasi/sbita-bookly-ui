@@ -91,7 +91,7 @@ class BooklyUiElementorCategories extends Widget_Base
      */
     public function get_style_depends()
     {
-        return [ 'sbita-bookly-ui' ];
+        return ['sbita-bookly-ui'];
     }
 
     /**
@@ -106,22 +106,118 @@ class BooklyUiElementorCategories extends Widget_Base
     protected function _register_controls()
     {
         $this->start_controls_section(
-            'link',
+            'query',
             [
-                'label' => __( 'Link', 'sbita-bookly-ui' ),
+                'label' => __('Query', 'sbita-bookly-ui'),
             ]
         );
 
         $this->add_control(
-            'title',
+            'sort_by',
             [
-                'label' => __( 'Open in new tab', 'sbita-bookly-ui' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'default' => false,
+                'label' => __('Sort by', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'id' => __('Id', 'sbita-bookly-ui'),
+                    'name' => __('Name', 'sbita-bookly-ui'),
+                ],
+                'default' => 'id',
+            ]
+        );
+
+        $this->add_control(
+            'order',
+            [
+                'label' => __('Order', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'desc' => __('Desc', 'sbita-bookly-ui'),
+                    'asc' => __('Asc', 'sbita-bookly-ui'),
+                ],
+                'default' => 'asc',
+            ]
+        );
+
+        $this->add_control(
+            'limit',
+            [
+                'label' => __('Limit', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => null,
+                'max' => 1000,
+                'step' => 5,
+                'default' => null,
             ]
         );
 
         $this->end_controls_section();
+
+
+
+        $this->start_controls_section(
+            'item',
+            [
+                'label' => __('Items', 'sbita-bookly-ui'),
+            ]
+        );
+
+        $this->add_control(
+            'hide_title',
+            [
+                'label' => __('Hide title', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'return_value' => 'true',
+                'default' => false,
+            ]
+        );
+
+        $this->add_control(
+            'hide_image',
+            [
+                'label' => __('Hide image', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'return_value' => 'true',
+                'default' => false,
+            ]
+        );
+
+        $this->add_control(
+            'size',
+            [
+                'label' => __('Card Size', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'small' => __('Small', 'plugin-name'),
+                    'medium' => __('Medium', 'plugin-name'),
+                    'big' => __('Big', 'plugin-name'),
+
+                ],
+                'default' => 'medium',
+            ]
+        );
+
+        $this->add_control(
+            'open_new_tab',
+            [
+                'label' => __('Open in new tab', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'return_value' => '_blank',
+                'default' => false,
+            ]
+        );
+        $this->add_control(
+            'item_class',
+            [
+                'label' => __('Custom class', 'sbita-bookly-ui'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '',
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+
     }
 
 
@@ -137,8 +233,24 @@ class BooklyUiElementorCategories extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
+        $array = array(
+            'limit' => $settings['limit'],
+            'sort_by' => $settings['sort_by'],
+            'order' => $settings['order'],
+            'link_attrs' => ' target="'.$settings['open_new_tab'].'" ',
+            'size' => $settings['size'],
+            'hide_image' => $settings['hide_image'],
+            'hide_title' => $settings['hide_title'],
+            'item_class' => $settings['item_class'],
+        );
 
-        echo do_shortcode('[sbita-bookly-ui-categories size="small"]');
+        $attrs = '';
+        foreach ($array as $key => $setting){
+            $attrs .= " $key='$setting' ";
+        }
+
+        echo do_shortcode("[sbita-bookly-ui-categories $attrs]");
     }
+
 
 }
