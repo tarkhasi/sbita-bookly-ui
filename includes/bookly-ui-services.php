@@ -22,6 +22,14 @@ if (!class_exists('BooklyUiServices')) {
          */
         public static function default_service_url($url, $item, $attrs)
         {
+            if (!sbu_check_licence()) {
+                $page_id = sbita_get_option('bu_bookly_page');
+                if (!$page_id) return $url;
+                $url = get_permalink($page_id);
+                $url = $url . '?service_id=' . $item['id'];
+                return $url;
+            }
+
             // create item url by staff members page
             $page_id = sbita_get_option('bu_staff_members_page');
             if ($page_id) {

@@ -41,6 +41,11 @@ if (!class_exists('BooklyUiShortcodes')) {
         public static function staff_members($attrs)
         {
             ob_start();
+            if (!sbu_check_licence()) {
+                echo wp_kses_post(sbu_need_pro());
+                return ob_get_clean();
+            }
+
             include sbita_plugin_template(__FILE__, 'shortcodes/staff-members.php');
             return ob_get_clean();
         }
@@ -48,6 +53,11 @@ if (!class_exists('BooklyUiShortcodes')) {
         public static function categories($attrs)
         {
             ob_start();
+            if (!sbu_check_licence()) {
+                echo wp_kses_post(sbu_need_pro());
+                return ob_get_clean();
+            }
+
             include sbita_plugin_template(__FILE__, 'shortcodes/categories.php');
             return ob_get_clean();
         }

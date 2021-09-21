@@ -1,5 +1,9 @@
 # SbiTa Bookly Ui (Add-on)
-SbiTa Bookly Ui add-on x allows you to have a better ui of services, staffs and categories in the Bookly plugin.
+Important: This plugin is an add-on that requires the Bookly installed and activated. [View Bookly page](https://wordpress.org/plugins/bookly-responsive-appointment-booking-tool/). Sbita Bookly Ui (Add-on) that allows you to have a better user interface of Services, Staff members and Categories in the Bookly plugin.
+
+Free:
+services shortcode
+
 
 ## Shortcodes
 ```

@@ -141,3 +141,39 @@ function sbu_get_categories_options()
         return null;
     }
 }
+
+/**
+ * Check license
+ */
+function sbu_check_licence($from_server = false)
+{
+    try {
+        $licence = sbita_get_option('bu_licence');
+        $product_id = sbu_get_product_id();
+        $local = sbita_get_option('bu_licence_activated');
+        if ($local !== null && $from_server == false) return $local;
+
+        $result = sbita_licence($licence, $product_id);
+        sbita_update_option('bu_licence_activated', $result);
+        return $result;
+    } catch (Exception $e) {
+        return false;
+    }
+}
+
+/**
+ * Get Product id
+ */
+function sbu_get_product_id()
+{
+    return '3632';
+}
+
+/**
+ * Need pro message
+ */
+function sbu_need_pro($message = null)
+{
+    if ($message == null) $message = __('You need the Pro version. ', 'sbita-bookly-ui');
+    return sprintf(__('<div>%s <a href="https://wpkok.com/downloads/bookly-ui/" target="_blank">Sbita Bookly Ui Pro (Add-on)</a>!</div>', 'sbita-bookly-ui'), $message);
+}
