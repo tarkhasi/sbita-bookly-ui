@@ -15,6 +15,6 @@ $item = Bookly\Lib\Entities\Category::query('c')->where('id', $category_id)->fet
 if (!$item) return;
 
 ?>
-<div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo $item['name'] ?>">
-    <?php echo __('Category :', 'sbita-bookly-ui') . ' ' . $item['name']; ?>
+<div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo esc_attr($item['name']) ?>">
+    <?php echo __('Category :', 'sbita-bookly-ui') . ' ' . esc_html($item['name']); ?>
 </div>

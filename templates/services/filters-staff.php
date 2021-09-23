@@ -18,6 +18,6 @@ if (!$item || !isset($item['full_name'])) return;
 
 ?>
 
-<div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo $item['full_name'] ?>">
-    <?php echo __('Staff :','sbita-bookly-ui').' '.$item['full_name']; ?>
+<div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo esc_attr($item['full_name']) ?>">
+    <?php echo __('Staff :','sbita-bookly-ui').' '.esc_html($item['full_name']); ?>
 </div>

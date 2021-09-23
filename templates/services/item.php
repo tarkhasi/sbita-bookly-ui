@@ -14,7 +14,7 @@ $url = apply_filters('sbu_service_url', null, $item, $attrs);
 $custom_html = apply_filters('sbu_service_item_html', null, $item, $attrs, $url);
 if ($custom_html) {
 
-    echo $custom_html;
+    echo wp_kses_post_deep($custom_html);
     return;
 }
 
@@ -29,15 +29,15 @@ $class = !empty($attrs['item_class']) ? $attrs['item_class'] : $default_class;
 $attachment_id = $item['attachment_id'];
 ?>
 
-<div class="<?php echo $class ?>"
-     title="<?php echo $item['title']; ?>"
-     style="<?php echo $style; ?>"
+<div class="<?php echo esc_attr($class) ?>"
+     title="<?php echo esc_attr($item['title']); ?>"
+     style="<?php echo esc_attr($style); ?>"
 >
 
     <div class="sbu-service-item-image">
         <?php if (!$hide_image) { ?>
             <?php if ($url) { ?>
-                <a href="<?php echo $url ?>" <?php echo $link_attrs ?>>
+                <a href="<?php echo esc_url($url) ?>" <?php echo esc_attr($link_attrs) ?>>
                     <?php require SBU_TMP_DIR . '/services/image.php'; ?>
                 </a>
             <?php } else { ?>
@@ -48,20 +48,20 @@ $attachment_id = $item['attachment_id'];
 
     <div class="sbu-service-item-content">
         <div class="sbu-service-item-title">
-            <?php echo $item['title']; ?>
+            <?php echo esc_html($item['title']); ?>
         </div>
         <div class="sbu-service-item-category" title="<?php _e('Category', 'sbita-bookly-ui'); ?>">
-            <?php echo $item['category_name']; ?>
+            <?php echo esc_html($item['category_name']); ?>
         </div>
         <div class="sub-flex">
             <?php if (!$hide_duration) { ?>
                 <div class="sbu-service-item-duration sbu-nowrap" title="<?php _e('Duration', 'sbita-bookly-ui'); ?>">
-                    <?php echo sbu_duration($item['duration']); ?>
+                    <?php echo esc_html(sbu_duration($item['duration'])); ?>
                 </div>
             <?php } ?>
             <?php if (!$hide_price) { ?>
                 <div class="sbu-service-item-price sbu-nowrap" title="<?php _e('Price', 'sbita-bookly-ui'); ?>">
-                    <?php echo apply_filters('sbu_service_price', sbu_price($item['price']), $item); ?>
+                    <?php echo esc_html(apply_filters('sbu_service_price', sbu_price($item['price']), $item)); ?>
                 </div>
             <?php } ?>
 

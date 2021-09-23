@@ -12,7 +12,7 @@ $url = apply_filters('sbu_category_item_url', '#', $item, $attrs);
 
 $custom_html = apply_filters('sbu_category_item_html', null, $item, $attrs, $url);
 if ($custom_html) {
-    echo $custom_html;
+    echo wp_kses_post_deep($custom_html);
     return;
 }
 
@@ -31,14 +31,14 @@ if ($image_url && !$hide_image) {
 
 ?>
 
-<a href="<?php echo $url ?? '#' ?>"
-   class="<?php echo $class ?>"
-   style="<?php echo $style ?>"
-   title="<?php echo $item['name'] ?>"
-    <?php echo $link_attrs ?>
+<a href="<?php echo esc_url($url) ?? '#' ?>"
+   class="<?php echo esc_attr($class) ?>"
+   style="<?php echo esc_attr($style) ?>"
+   title="<?php echo esc_attr($item['name']) ?>"
+    <?php echo esc_attr($link_attrs) ?>
 >
     <div class="sbu-overly sbu-nowrap">
-        <?php echo !$hide_title ? $item['name'] : ''; ?>
+        <?php echo esc_html(!$hide_title ? $item['name'] : ''); ?>
         <div class="sbu-service-buttons">
             <?php do_action('sbu_category_button', $item); ?>
         </div>

@@ -20,7 +20,7 @@ $class .= " sbu-$size "
 
 <?php do_action('sbu_categories_list_before', $data, $attrs); ?>
 
-<div class="<?php echo $class ?>">
+<div class="<?php echo esc_attr($class) ?>">
     <?php
     foreach ($data as $item) {
         require SBU_TMP_DIR . '/categories/item.php';

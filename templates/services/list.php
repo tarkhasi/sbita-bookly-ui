@@ -19,7 +19,7 @@ $class = !empty($attrs['list_class']) ? $attrs['list_class'] : 'sbu-services-mai
 ?>
 
 
-<div class="<?php echo $class ?>" style="<?php echo $style ?>">
+<div class="<?php echo esc_attr($class) ?>" style="<?php echo esc_attr($style) ?>">
     <?php
     foreach ($data as $item) {
         require SBU_TMP_DIR . '/services/item.php';

@@ -13,6 +13,6 @@ $item = Bookly\Lib\Entities\Service::query('s')->where('id', $service_id)->fetch
 if (!$item || !isset($item['title'])) return;
 ?>
 
-<div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo $item['title'] ?>">
-    <?php echo __('Service :','sbita-bookly-ui').' '.$item['title']; ?>
+<div class="sbu-services-filters-item sbu-rounded sbu-nowrap" title="<?php echo esc_attr($item['title']) ?>">
+    <?php echo __('Service :','sbita-bookly-ui').' '.esc_html($item['title']); ?>
 </div>

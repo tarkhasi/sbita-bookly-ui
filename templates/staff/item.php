@@ -12,7 +12,7 @@ if (!isset($item['id'])) return;
 $url = apply_filters('sbu_staff_item_url', null, $item, $attrs);
 $custom_html = apply_filters('sbu_staff_item_html', null, $item, $attrs, $url);
 if ($custom_html) {
-    echo $custom_html;
+    echo wp_kses_post_deep($custom_html);
     return;
 }
 
@@ -20,12 +20,12 @@ $attachment_id = $item['attachment_id'];
 $default_class = sbita_get_option('bu_default_staff_item_class');
 ?>
 
-<div title="<?php echo $item['full_name'] ?? ''; ?>"
-     class="<?php echo $attrs['item_class'] ?? $default_class ?>">
+<div title="<?php echo esc_attr($item['full_name']) ?? ''; ?>"
+     class="<?php echo esc_attr($attrs['item_class'] ?? $default_class) ?>">
 
     <div class="sbu-staff-item-image">
         <?php if ($url) { ?>
-            <a href="<?php echo $url ?>">
+            <a href="<?php echo esc_url($url) ?>">
                 <?php require SBU_TMP_DIR . '/staff/image.php'; ?>
             </a>
         <?php } else { ?>
@@ -34,11 +34,11 @@ $default_class = sbita_get_option('bu_default_staff_item_class');
     </div>
 
     <div class="sbu-staff-item-content">
-        <div class="sbu-staff-item-title" title="<?php echo $item['full_name'] ?? ''; ?>">
-            <?php echo $item['full_name']; ?>
+        <div class="sbu-staff-item-title" title="<?php echo esc_attr($item['full_name']) ?? ''; ?>">
+            <?php echo esc_html($item['full_name']) ?>
         </div>
-        <div class="sbu-staff-item-email" title="<?php echo $item['email'] ?? ''; ?>">
-            <?php echo $item['email'] ?? ''; ?>&nbsp;
+        <div class="sbu-staff-item-email" title="<?php echo esc_attr($item['email'] ?? ''); ?>">
+            <?php echo esc_html($item['email'] ?? ''); ?>&nbsp;
         </div>
         <?php do_action('sbu_staff_info', $item, $attrs); ?>
     </div>
