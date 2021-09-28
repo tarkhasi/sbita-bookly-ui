@@ -9,8 +9,8 @@ use Bookly\Lib;
 
 
 // params or attrs for query
-$sort_by = $_GET['sort_by'] ?? 'position';
-$order = $_GET['order'] ?? 'asc';
+$sort_by = sanitize_text_field( $_GET['sort_by'] ?? 'position');
+$order = sanitize_text_field( $_GET['order'] ?? 'asc');
 
 $sort_by = $attrs['sort_by'] ?? $sort_by;
 $order = $attrs['order'] ?? $order;

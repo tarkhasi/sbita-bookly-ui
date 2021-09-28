@@ -31,9 +31,9 @@ if (!class_exists('BooklyUiStaffMembers')) {
             $url = $url . '?staff_id=' . $item['id'];
 
             // params
-            $service_id = $_GET['service_id'] ?? null;
-            $category_id = $_GET['cat_id'] ?? null;
-            $location_id = $_GET['loc_id'] ?? null;
+            $service_id = sanitize_text_field( $_GET['service_id'] ?? null);
+            $category_id = sanitize_text_field( $_GET['cat_id'] ?? null);
+            $location_id = sanitize_text_field( $_GET['loc_id'] ?? null);
 
             $service_id = $attrs['service_id'] ?? $service_id;
             $category_id = $attrs['cat_id'] ?? $category_id;

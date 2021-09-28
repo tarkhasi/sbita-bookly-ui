@@ -8,10 +8,10 @@
 use Bookly\Lib;
 
 
-$sort_by = $_GET['sort_by'] ?? 'position';
-$order = $_GET['order'] ?? 'asc';
-$category_id = $_GET['cat_id'] ?? null;
-$staff_id = $_GET['staff_id'] ?? null;
+$sort_by = sanitize_text_field( $_GET['sort_by'] ?? 'position');
+$order = sanitize_text_field( $_GET['order'] ?? 'asc');
+$category_id = sanitize_text_field( $_GET['cat_id'] ?? null);
+$staff_id = sanitize_text_field( $_GET['staff_id'] ?? null);
 $location_id = null;
 
 

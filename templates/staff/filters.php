@@ -7,7 +7,7 @@
  */
 
 // form url
-$service_id = $_GET['service_id'] ?? null;
+$service_id = sanitize_text_field( $_GET['service_id'] ?? null);
 
 // form shortcode attrs
 $service_id = $attrs['service_id'] ?? $service_id;

@@ -27,7 +27,7 @@ if (!class_exists('BooklyUiCategories')) {
             $url = $url . '?cat_id=' . $item['id'];
 
             // staff id
-            $staff_id = $_GET['staff_id'] ?? null;
+            $staff_id = sanitize_text_field( $_GET['staff_id'] ?? null);
             $staff_id = $attrs['staff_id'] ?? $staff_id;
             $staff_id = apply_filters('sbu_shortcode_categories_staff_id', $staff_id, $attrs);
 
