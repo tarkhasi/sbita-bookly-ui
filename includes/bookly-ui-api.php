@@ -7,7 +7,7 @@ if (!class_exists('BooklyUiApi')) {
 
         public static function main()
         {
-            add_action('rest_api_init', array(__CLASS__, 'register_rest_routes'));
+//            add_action('rest_api_init', array(__CLASS__, 'register_rest_routes'));
         }
 
         /**

@@ -3,7 +3,7 @@ Contributors: sbita
 Tags: bookly, ui, booking, add-on, elementor
 Requires at least: 4.7
 Tested up to: 5.8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,9 +23,9 @@ FREE Features:
 Pro Features:
 * Make your amazing lists!
 * Improved user interface(ui) and user experience(ux) for your Bookly Services, Staff members and Categories
-* Create pages for your Services, Staff members and Categories
-* Add image for your Categories
-* Custom style and  filters for your bookly lists
+* Create page for your Services, Staff members and Categories
+* Add image for Categories
+* Custom style and filters for your Bookly lists
 * Services, Staff members and Categories shortcodes. add them any where!
 * Elementor widgets
 * Globalize your Services, Staff members and Categories
@@ -39,7 +39,13 @@ Join the elite web professionals who enjoy [Sbita Bookly Ui Pro](https://wpkok.c
 
 == Screenshots ==
 
-1. Custom style and filters for Bookly Services
+1. Bookly Categories List
+2. Bookly Services List
+3. Bookly Staff Members List
+4. Bookly ui and Elementor
+5. Bookly ui and Elementor
+6. Bookly ui and Elementor
+7. Pages Workflow
 
 == Changelog ==
 

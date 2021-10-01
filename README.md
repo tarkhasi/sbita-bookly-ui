@@ -19,11 +19,24 @@ services shortcode
     item_class='sbu-grid-list sbu-box-shadow sbu-category-item sbu-rounded']
 
 [sbita-bookly-ui-services 
-    hide_image='false|true' 
-    hide_duration='false|true' 
-    hide_price='false|true' 
-    link_attrs='target="_blank"' 
-    hide_filters="false|true"]
+    limit=''
+    sort_by=''
+    order=''
+    link_attrs=''
+    hide_image=''
+    hide_buttons=''
+    hide_duration=''
+    hide_price=''
+    item_class=''
+    cat_id=''
+    staff_id=''
+    hide_filters=''
+    button_label=''
+    button_class=''
+    list_class=''
+    list_style=''
+    image_style='' 
+    ]
 [sbita-bookly-ui-staff-members link_attrs='target="_blank"']
 ``` 
 
