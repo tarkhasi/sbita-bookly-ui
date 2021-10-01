@@ -2,7 +2,7 @@
 /*
 Plugin Name: SbiTa Bookly Ui (Add-on)
 Plugin URI: https://wordpress.org/plugins/sbita-bookly-ui-add-on/
-Description: SbiTa Bookly Ui add-on x allows you to have a better ui of services, staffs and categories in the Bookly plugin.
+Description: SbiTa Bookly Ui add-on allows you to have a better ui of services, staffs and categories in the Bookly plugin.
 Version: 1.0.2
 Author: WebKok
 Author URI: https://wpkok.com/
