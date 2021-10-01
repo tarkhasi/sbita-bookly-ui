@@ -45,7 +45,8 @@ Join the elite web professionals who enjoy [Sbita Bookly Ui Pro](https://wpkok.c
 4. Bookly ui and Elementor
 5. Bookly ui and Elementor
 6. Bookly ui and Elementor
-7. Pages Workflow
+7. Bookly ui and Elementor
+8. Pages Workflow
 
 == Changelog ==
 
