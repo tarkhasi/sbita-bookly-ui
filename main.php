@@ -3,8 +3,8 @@
 Plugin Name: SbiTa Bookly Ui (Add-on)
 Plugin URI: https://wordpress.org/plugins/sbita-bookly-ui-add-on/
 Description: SbiTa Bookly Ui add-on allows you to have a better ui of services, staffs and categories in the Bookly plugin.
-Version: 1.0.2
-Author: WebKok
+Version: 1.0.3
+Author: WpKok
 Author URI: https://wpkok.com/
 Domain Path: /languages
 Text Domain: sbita-bookly-ui
@@ -85,7 +85,7 @@ if (!class_exists('SbitaBooklyUi')) {
             add_action('admin_notices', function () {
                 echo "
                 <div class='notice notice-error is-dismissible'>
-                        <p>SbiTa Bookly Ui: Need `SbiTa`  and 
+                        <p>SbiTa Bookly Ui: Need <a href='https://wordpress.org/plugins/sbita/'>Sbita Core</a>  and 
                         <a href='https://wordpress.org/plugins/bookly-responsive-appointment-booking-tool/'>Bookly</a>
                         plugins!</p>
                 </div>";

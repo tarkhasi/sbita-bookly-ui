@@ -3,7 +3,7 @@ Contributors: sbita
 Tags: bookly, ui, booking, add-on, elementor
 Requires at least: 4.7
 Tested up to: 5.8.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ That allows you to have a better ui of services, staffs and categories in the Bo
 
 Important: This plugin is an add-on that requires the Bookly installed and activated. [View Bookly page](https://wordpress.org/plugins/bookly-responsive-appointment-booking-tool/) (It`s Free).
 
-Sbita Bookly Ui Pro (Add-on) that allows you to have a better user interface of Services, Staff members and Categories in the Bookly plugin.
+Sbita Bookly Ui Pro (Add-on) that allows you to have a better user interface of Services, Staff members and Categories in the Bookly plugin. By this plugin you can show your Bookly Services, Categories or Staff members with customize style and change them.
 
 FREE Features:
 * Custom style and filters for Bookly Services
@@ -49,6 +49,9 @@ Join the elite web professionals who enjoy [Sbita Bookly Ui Pro](https://wpkok.c
 8. Pages Workflow
 
 == Changelog ==
+
+= 1.0.3 =
+* Fixed bugs
 
 = 1.0 =
 * Create project
