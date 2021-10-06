@@ -3,7 +3,7 @@ Contributors: sbita
 Tags: bookly, ui, booking, add-on, elementor
 Requires at least: 4.7
 Tested up to: 5.8.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,8 +50,11 @@ Join the elite web professionals who enjoy [Sbita Bookly Ui Pro](https://wpkok.c
 
 == Changelog ==
 
+= 1.0.4 =
+* Fix bugs
+
 = 1.0.3 =
-* Fixed bugs
+* Fix bugs
 
 = 1.0 =
 * Create project
