@@ -37,7 +37,7 @@ if (!class_exists('SbitaBooklyUi')) {
          */
         public static function main()
         {
-            $result = is_plugin_active('sbita/main.php') && is_plugin_active('bookly-addon-pro/main.php');
+            $result = is_plugin_active('sbita/main.php') && is_plugin_active('bookly-responsive-appointment-booking-tool/main.php');
             if (!$result) return self::need_core_message();
 
             add_action('wp_enqueue_scripts', array(__CLASS__, 'add_script'));
