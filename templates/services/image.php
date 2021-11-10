@@ -7,8 +7,8 @@
  */
 
 if (!isset($attachment_id) || !$attachment_id) {
-    $default_image = sbita_get_option('bu_default_service_image');
-    $default_image = $default_image != null ? $default_image : sbita_plugin_asset_url(__FILE__, 'img/default-service.jpg');
+    $default_image = sbu_get_option('bu_default_service_image');
+    $default_image = $default_image != null ? $default_image : sbu_plugin_asset_url(__FILE__, 'img/default-service.jpg');
     echo sprintf("<img src='%s' alt=''/>", esc_url($default_image));
     return;
 }

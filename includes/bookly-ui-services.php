@@ -23,7 +23,7 @@ if (!class_exists('BooklyUiServices')) {
         public static function default_service_url($url, $item, $attrs)
         {
             if (!sbu_check_licence()) {
-                $page_id = sbita_get_option('bu_bookly_page');
+                $page_id = sbu_get_option('bu_bookly_page');
                 if (!$page_id) return $url;
                 $url = get_permalink($page_id);
                 $url = $url . '?service_id=' . $item['id'];
@@ -31,7 +31,7 @@ if (!class_exists('BooklyUiServices')) {
             }
 
             // create item url by staff members page
-            $page_id = sbita_get_option('bu_staff_members_page');
+            $page_id = sbu_get_option('bu_staff_members_page');
             if ($page_id) {
                 $url = get_permalink($page_id);
                 $url = $url . '?service_id=' . $item['id'];
@@ -65,7 +65,7 @@ if (!class_exists('BooklyUiServices')) {
         {
             $url = self::default_service_url(null, $item, $attrs);
             if (!$url) return;
-            $title = sbita_get_option('bu_service_next_button_title') ?? 'Next';
+            $title = sbu_get_option('bu_service_next_button_title') ?? 'Next';
             $button_class = 'sbu-bookly-color sbu-color-white-hover sbu-bookly-bg-hover';
 
             if (!empty($attrs['button_label'])) $title = $attrs['button_label'];

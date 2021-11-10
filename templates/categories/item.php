@@ -20,7 +20,7 @@ $style = !empty($attrs['style']) ? $attrs['style'] : '';
 $hide_image = !empty($attrs['hide_image']) ? $attrs['hide_image'] : false;
 $hide_title = !empty($attrs['hide_title']) ? $attrs['hide_title'] : false;
 $link_attrs = !empty($attrs['link_attrs']) ? $attrs['link_attrs'] : '';
-$default_class = sbita_get_option('bu_default_category_item_class');
+$default_class = sbu_get_option('bu_default_category_item_class');
 $class = !empty($attrs['item_class']) ? $attrs['item_class'] : $default_class;
 
 $image_url = sbu_service_category_image_url($item['id']);

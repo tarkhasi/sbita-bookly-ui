@@ -72,7 +72,7 @@ if (!class_exists('BooklyUiRelations')) {
          */
         public static function admin_notice_missing_main_plugin()
         {
-            deactivate_plugins(sbita_plugin_dir_name(__FILE__));
+            deactivate_plugins(sbu_plugin_dir_name(__FILE__));
 
             return sprintf(
                 wp_kses(
@@ -100,7 +100,7 @@ if (!class_exists('BooklyUiRelations')) {
          */
         public static function admin_notice_minimum_elementor_version()
         {
-            deactivate_plugins(sbita_plugin_dir_name(__FILE__));
+            deactivate_plugins(sbu_plugin_dir_name(__FILE__));
 
             return sprintf(
                 wp_kses(
@@ -129,7 +129,7 @@ if (!class_exists('BooklyUiRelations')) {
          */
         public static function admin_notice_minimum_php_version()
         {
-            deactivate_plugins(sbita_plugin_dir_name(__FILE__));
+            deactivate_plugins(sbu_plugin_dir_name(__FILE__));
 
             return sprintf(
                 wp_kses(

@@ -28,7 +28,7 @@ if (!class_exists('BooklyUiSettings')) {
             $whc_option->setLabel(__('Bookly Ui Pro (Add-on) Licence', 'sbita-bookly-ui'));
             $whc_option->setData(['product_id' => sbu_get_product_id(), 'verified' => $verified]);
             $whc_option->setDescription(sbu_need_pro(__('Join the elite web professionals who enjoy', 'sbita-bookly-ui')));
-            $whc_option->add('sbita_licenses', null);
+            $whc_option->add('sbu_licenses', null);
 
 
             // Title

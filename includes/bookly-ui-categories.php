@@ -20,7 +20,7 @@ if (!class_exists('BooklyUiCategories')) {
         public static function default_item_link($url, $item, $attrs)
         {
             // create item url by services page
-            $page_id = sbita_get_option('bu_services_page');
+            $page_id = sbu_get_option('bu_services_page');
             if (!$page_id) return $url;
 
             $url = get_permalink($page_id);

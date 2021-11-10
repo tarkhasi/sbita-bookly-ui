@@ -35,7 +35,7 @@ function sbu_price($price)
 function sbu_service_category_image_url($category_id)
 {
     try {
-        $json = sbita_get_option('bu_categories_images');
+        $json = sbu_get_option('bu_categories_images');
         $array = json_decode($json, true);
 
         if (!$array || !isset($array[$category_id])) return null;
@@ -148,13 +148,13 @@ function sbu_get_categories_options()
 function sbu_check_licence($from_server = false)
 {
     try {
-        $licence = sbita_get_option('bu_licence');
+        $licence = sbu_get_option('bu_licence');
         $product_id = sbu_get_product_id();
-        $local = sbita_get_option('bu_licence_activated');
+        $local = sbu_get_option('bu_licence_activated');
         if ($local !== null && $from_server == false) return $local;
 
-        $result = sbita_licence($licence, $product_id);
-        sbita_update_option('bu_licence_activated', $result);
+        $result = sbu_licence($licence, $product_id);
+        sbu_update_option('bu_licence_activated', $result);
         return $result;
     } catch (Exception $e) {
         return false;

@@ -24,7 +24,7 @@ if (!class_exists('BooklyUiStaffMembers')) {
          */
         public static function default_item_link($url, $item, $attrs)
         {
-            $page_id = sbita_get_option('bu_bookly_page');
+            $page_id = sbu_get_option('bu_bookly_page');
             if (!$page_id) return $url;
 
             $url = get_permalink($page_id);
@@ -58,7 +58,7 @@ if (!class_exists('BooklyUiStaffMembers')) {
         {
             $url = self::default_item_link(null, $item, $attrs);
             if (!$url) return;
-            $title = sbita_get_option('bu_staff_next_button_title') ?? 'Next';
+            $title = sbu_get_option('bu_staff_next_button_title') ?? 'Next';
             $button_class = 'sbu-bookly-color sbu-color-white-hover sbu-bookly-bg-hover';
 
             if (!empty($attrs['button_label'])) $title = $attrs['button_label'];

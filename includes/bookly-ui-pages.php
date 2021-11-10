@@ -61,7 +61,7 @@ if (!class_exists('BooklyUiPages')) {
                 foreach ($pages as $page){
                     $post_id = wp_insert_post($page);
                     if (!$post_id) continue;
-                    if (isset($page['settings_key'])) sbita_update_option($page['settings_key'], $post_id);
+                    if (isset($page['settings_key'])) sbu_update_option($page['settings_key'], $post_id);
                 }
 
                 do_action('sbu_after_create_pages', $pages);

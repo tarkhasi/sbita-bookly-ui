@@ -17,7 +17,7 @@ if ($custom_html) {
 }
 
 $attachment_id = $item['attachment_id'];
-$default_class = sbita_get_option('bu_default_staff_item_class');
+$default_class = sbu_get_option('bu_default_staff_item_class');
 ?>
 
 <div title="<?php echo esc_attr($item['full_name']) ?? ''; ?>"

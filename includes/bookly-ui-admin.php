@@ -17,7 +17,7 @@ if (!class_exists('BooklyUiAdmin')) {
          */
         public static function admin_init()
         {
-            add_filter('plugin_action_links_' . sbita_plugin_dir_name(__FILE__) . '/main.php', array(__CLASS__, 'action_links'));
+            add_filter('plugin_action_links_' . sbu_plugin_dir_name(__FILE__) . '/main.php', array(__CLASS__, 'action_links'));
         }
 
         /**
@@ -28,7 +28,7 @@ if (!class_exists('BooklyUiAdmin')) {
         public static function action_links($links)
         {
 
-            array_unshift($links, '<a href="' . sbita_settings_url(BooklyUiSettings::$group_name) . '">Settings</a>');
+            array_unshift($links, '<a href="' . sbu_settings_url(BooklyUiSettings::$group_name) . '">Settings</a>');
 
             return $links;
         }

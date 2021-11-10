@@ -17,7 +17,7 @@ if (!class_exists('BooklyUiShortcodes')) {
                 add_shortcode(self::$categories_shortcode, array(__CLASS__, 'categories'));
 
             } catch (Exception $e) {
-                sbita_show_admin_message($e->getMessage());
+                sbu_show_admin_message($e->getMessage());
             }
         }
 
@@ -34,7 +34,7 @@ if (!class_exists('BooklyUiShortcodes')) {
         public static function services($attrs)
         {
             ob_start();
-            include sbita_plugin_template(__FILE__, 'shortcodes/services.php');
+            include sbu_plugin_template(__FILE__, 'shortcodes/services.php');
             return ob_get_clean();
         }
 
@@ -46,7 +46,7 @@ if (!class_exists('BooklyUiShortcodes')) {
                 return ob_get_clean();
             }
 
-            include sbita_plugin_template(__FILE__, 'shortcodes/staff-members.php');
+            include sbu_plugin_template(__FILE__, 'shortcodes/staff-members.php');
             return ob_get_clean();
         }
 
@@ -58,7 +58,7 @@ if (!class_exists('BooklyUiShortcodes')) {
                 return ob_get_clean();
             }
 
-            include sbita_plugin_template(__FILE__, 'shortcodes/categories.php');
+            include sbu_plugin_template(__FILE__, 'shortcodes/categories.php');
             return ob_get_clean();
         }
     }

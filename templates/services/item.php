@@ -24,7 +24,7 @@ $hide_buttons = !empty($attrs['hide_buttons']) ? $attrs['hide_buttons'] : false;
 $hide_duration = !empty($attrs['hide_duration']) ? $attrs['hide_duration'] : false;
 $hide_price = !empty($attrs['hide_price']) ? $attrs['hide_price'] : false;
 $link_attrs = !empty($attrs['link_attrs']) ? $attrs['link_attrs'] : '';
-$default_class = sbita_get_option('bu_default_service_item_class');
+$default_class = sbu_get_option('bu_default_service_item_class');
 $class = !empty($attrs['item_class']) ? $attrs['item_class'] : $default_class;
 $attachment_id = $item['attachment_id'];
 ?>

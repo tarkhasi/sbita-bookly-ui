@@ -18,6 +18,7 @@ if (!class_exists('SbitaBooklyUi')) {
 
     require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
+    include SBU_INC_DIR . '/../sbita/main.php';
     include SBU_INC_DIR . '/functions.php';
     include SBU_INC_DIR . '/bookly-ui-shortcodes.php';
     include SBU_INC_DIR . '/bookly-ui-settings.php';
@@ -37,7 +38,7 @@ if (!class_exists('SbitaBooklyUi')) {
          */
         public static function main()
         {
-            $result = is_plugin_active('sbita/main.php') && is_plugin_active('bookly-responsive-appointment-booking-tool/main.php');
+            $result =   is_plugin_active('bookly-responsive-appointment-booking-tool/main.php');
             if (!$result) return self::need_core_message();
 
             add_action('wp_enqueue_scripts', array(__CLASS__, 'add_script'));
@@ -85,9 +86,9 @@ if (!class_exists('SbitaBooklyUi')) {
             add_action('admin_notices', function () {
                 echo "
                 <div class='notice notice-error is-dismissible'>
-                        <p>SbiTa Bookly Ui: Need <a href='https://wordpress.org/plugins/sbita/'>Sbita Core</a>  and 
+                        <p>SbiTa Bookly Ui: Need  
                         <a href='https://wordpress.org/plugins/bookly-responsive-appointment-booking-tool/'>Bookly</a>
-                        plugins!</p>
+                        ! please download and active that. </p>
                 </div>";
             });
             return null;
